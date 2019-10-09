@@ -58,7 +58,7 @@
             padding: 5px;
         }
 
-        nav ul li .tombol_lain:hover {
+        nav ul li #tombol_lain:hover {
             border-bottom: 2px solid #37988e;
         }
 
@@ -70,13 +70,18 @@
         /* nav ul li:hover a{
         border-bottom: #37988e;
     } */
-        nav ul li  {
+        nav ul li {
             display: block;
             padding: 10px 20px 10px 0;
             color: #fff;
         }
-        a{
+
+        a {
             text-decoration: none;
+        }
+
+        #tombol_lain {
+            padding-bottom: 10px;
         }
 
         .tombol {
@@ -93,17 +98,7 @@
             width: 70%;
             text-align: center;
         }
-        .content h1{
-            margin: 40px;
-        }
-        
-        form button{
-            padding: 7px 35px;
-            background-color: #4ACEC9;
-            border-radius: 15px;
-        }
 
-        
         .footer {
             width: 100%;
             margin: 300px auto 0 auto;
@@ -126,7 +121,7 @@
         }
 
         .meidapartner {
-            margin-top: 0px auto;
+            margin-top: 50px;
             padding: 0px;
             text-align: center;
         }
@@ -140,6 +135,99 @@
             float: right;
             margin: 0px 0 20px 0;
             padding: 0px;
+        }
+
+        @media screen and (max-width: 960px) {
+
+            
+
+            .content {
+                width: 100%;
+            }
+
+            .footer {
+                width: 100%;
+                margin: 250px auto 0 auto;
+                /* font-size: 12pt; */
+            }
+
+            .socialmedia {
+                float: none;
+                margin: 20px 0;
+            }
+
+            .socialmedia img {
+                margin: 20px 0;
+            }
+
+            .meidapartner  {
+                margin: 20px 0;
+            }
+            .meidapartner img{
+                margin: 20px;
+            }
+
+            .contact {
+                float: none;
+                margin: 0px 0 20px 0;
+                padding: 0px;
+            }
+            .contact p{
+                margin-top: 20px;
+            }
+
+
+        }
+
+        @media screen and (max-width: 720px) {
+            .header {
+                position: inherit;
+            }
+
+            nav img {
+                width: 30px;
+                height: 30px;
+                float: left;
+            }
+
+            nav ul {
+                padding: 0 20px;
+                list-style: none;
+                position: relative;
+                display: inline-block;
+                width: 100%;
+            }
+
+            nav ul li {
+                float: none;
+            }
+
+            nav .tombolmaning {
+                float: none;
+            }
+
+            nav .icon {
+                float: none;
+            }
+
+            nav .icon h4 {
+                float: none;
+                margin-top: 0px;
+                padding: 5px;
+            }
+            .footer {
+                width: 100%;
+            }
+
+            /* .socialmedia img {
+                width: 20px;
+                height: 20px;
+            }
+
+            .meidapartner img {
+                width: 30px;
+                height: 30px;
+            } */
         }
     </style>
 
@@ -156,15 +244,15 @@
                 </div>
                 <div class="tombolmaning">
                     <li><a href="#" class="tombol">Login</a></li>
-                    <li><a href="#" class="tombol_lain">About Us</a></li>
-                    <li><a href="#" class="tombol_lain">My Course</a></li>
-                    <li><a href="#" class="tombol_lain">Home</a></li>
+                    <li><a href="#" id="tombol_lain">About Us</a></li>
+                    <li><a href="#" id="tombol_lain">My Course</a></li>
+                    <li><a href="#" id="tombol_lain">Home</a></li>
                 </div>
             </ul>
         </nav>
     </div>
     <div class="content">
-        <h1>About</h1>
+        <h1>About</h1><br><br>
         <p>KelasKita adalah media online untuk memudahkan Anda membuat dan mengikuti kelas belajar secara online bersama peserta didik, teman, tim atau komunitas Anda.
 <br><br>
 KelasKita bertujuan untuk berkontribusi mencerdaskan Indonesia dengan membuat media belajar online yang mudah, murah, menyenangkan dan bisa diakses dari mana saja dan oleh siapa saja di seluruh dunia
@@ -172,25 +260,25 @@ KelasKita bertujuan untuk berkontribusi mencerdaskan Indonesia dengan membuat me
 KelasKita juga mencoba menjadi solusi bagi mereka yang ingin meningkatkan kemampuan diri tapi terhalang oleh jarak dan waktu untuk belajar secara rutin di sebuah institusi pendidikan.
 <br><br>
 Bantu kami menyediakan pendidikan dan pelajaran yang layak untuk mencerdaskan Indonesia dengan membuat kelas atau kuis di bawah ini.</p>
+    </div>
+    <div class="footer">
+        <div class="meidapartner">
+            <h5>Media Partner</h5>
+            <img src="diknas.png" alt="Kemdikbud">
         </div>
-        <div class="footer">
-            <div class="meidapartner">
-                <h5>Media Partner</h5>
-                <img src="diknas.png" alt="Kemdikbud">
-            </div>
-            <div class="socialmedia">
-                <h5>Social Media</h5>
-                <ul>
-                    <li><img src="instagram.png" alt="instagram"></li>
-                    <li><img src="facebook.png" alt="facebook"></li>
-                    <li><img src="twitter.png" alt="twitter"></li>
-                </ul>
-            </div>
-            <div class="contact">
-                <h5>Contact Us</h5>
-                <p>www.SMAN1Jember.com</p>
-            </div>
+        <div class="socialmedia">
+            <h5>Social Media</h5>
+            <ul>
+                <li><img src="instagram.png" alt="instagram"></li>
+                <li><img src="facebook.png" alt="facebook"></li>
+                <li><img src="twitter.png" alt="twitter"></li>
+            </ul>
         </div>
+        <div class="contact">
+            <h5>Contact Us</h5>
+            <p>www.SMAN1Jember.com</p>
+        </div>
+    </div>
     </div>
 </body>
 

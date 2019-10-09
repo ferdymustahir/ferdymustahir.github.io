@@ -15,7 +15,7 @@
         body {
             width: 80%;
             margin: 50px auto;
-            background-image: url("bg2.png");
+            background-image: url("bgabout.png");
             background-size: cover;
         }
 
@@ -58,7 +58,7 @@
             padding: 5px;
         }
 
-        nav ul li .tombol_lain:hover {
+        nav ul li #tombol_lain:hover {
             border-bottom: 2px solid #37988e;
         }
 
@@ -70,13 +70,18 @@
         /* nav ul li:hover a{
         border-bottom: #37988e;
     } */
-        nav ul li  {
+        nav ul li {
             display: block;
             padding: 10px 20px 10px 0;
             color: #fff;
         }
-        a{
+
+        a {
             text-decoration: none;
+        }
+
+        #tombol_lain {
+            padding-bottom: 10px;
         }
 
         .tombol {
@@ -89,14 +94,15 @@
         }
 
         .content {
-            margin: 200px auto 0 auto;
+            margin: 150px auto 0 auto;
             width: 100%;
+            text-align: center;
         }
 
         .isisatu {
             margin: 0px;
             width: 100%;
-            height: 300px;
+            /* height: 300px; */
         }
 
         .isisatu ul {
@@ -121,7 +127,7 @@
         }
 
         .contentdua {
-            margin: 200px auto;
+            margin: 150px auto;
             width: 80%;
             text-align: center;
         }
@@ -150,6 +156,8 @@
             border-radius: 50px;
         }
 
+
+
         .footer {
             width: 100%;
             margin: 300px auto 0 auto;
@@ -172,7 +180,7 @@
         }
 
         .meidapartner {
-            margin-top: 0px auto;
+            margin-top: 50px;
             padding: 0px;
             text-align: center;
         }
@@ -186,6 +194,153 @@
             float: right;
             margin: 0px 0 20px 0;
             padding: 0px;
+        }
+
+        @media screen and (max-width: 960px) {
+
+
+
+            .content {
+                width: 100%;
+                margin-top: 50px;
+            }
+            .isisatu ul  {
+                text-align: center;
+                margin: 0;
+            }
+
+            .isisatu ul li {
+                text-align: center;
+                margin-top: 10px;
+            }
+
+            .contentdua {
+                margin: 150px auto;
+                width: 80%;
+                text-align: center;
+            }
+
+            .isikiri {
+                width: 100%;
+                margin-left: 0px;
+                float: none;
+            }
+
+            .isikanan {
+                width: 100%;
+                margin-left: 0px;
+                margin-right: 0px;
+                margin-top: 0px;
+                float: none;
+            }
+
+            .footer {
+                width: 100%;
+                margin: 200px auto 0 auto;
+                /* font-size: 12pt; */
+            }
+
+            .socialmedia {
+                float: none;
+                margin: 20px 0;
+            }
+
+            .socialmedia img {
+                margin: 20px 0;
+            }
+
+            .meidapartner {
+                margin: 20px 0;
+            }
+
+            .meidapartner img {
+                margin: 20px;
+            }
+
+            .contact {
+                float: none;
+                margin: 0px 0 20px 0;
+                padding: 0px;
+            }
+
+            .contact p {
+                margin-top: 20px;
+            }
+
+
+        }
+
+        @media screen and (max-width: 720px) {
+            .header {
+                position: inherit;
+            }
+
+            nav img {
+                width: 30px;
+                height: 30px;
+                float: left;
+            }
+
+            nav ul {
+                padding: 0 20px;
+                list-style: none;
+                position: relative;
+                display: inline-block;
+                width: 100%;
+            }
+
+            nav ul li {
+                float: none;
+            }
+
+            nav .tombolmaning {
+                float: none;
+            }
+
+            nav .icon {
+                float: none;
+            }
+
+            nav .icon h4 {
+                float: none;
+                margin-top: 0px;
+                padding: 5px;
+            }
+
+
+            .isikiri img,
+            .isikanan img {
+                margin-top: 100px;
+                width: 40px;
+                height: 40px;
+                padding: 5px;
+                border: 2px solid white;
+                border-radius: 50px;
+            }
+
+            .footer {
+                width: 100%;
+            }
+
+            .form-group {
+                margin: 20px auto;
+                padding: 5px;
+                width: 280px;
+                height: 30px;
+                border: 2px solid black;
+                border-radius: 10px;
+                color: black;
+            }
+
+            /* .socialmedia img {
+                width: 20px;
+                height: 20px;
+            }
+
+            .meidapartner img {
+                width: 30px;
+                height: 30px;
+            } */
         }
     </style>
 
@@ -202,9 +357,9 @@
                 </div>
                 <div class="tombolmaning">
                     <li><a href="#" class="tombol">Login</a></li>
-                    <li><a href="#" class="tombol_lain">About Us</a></li>
-                    <li><a href="#" class="tombol_lain">My Course</a></li>
-                    <li><a href="#" class="tombol_lain">Home</a></li>
+                    <li><a href="#" id="tombol_lain">About Us</a></li>
+                    <li><a href="#" id="tombol_lain">My Course</a></li>
+                    <li><a href="#" id="tombol_lain">Home</a></li>
                 </div>
             </ul>
         </nav>
@@ -225,7 +380,7 @@
             </ul>
             <ul>
                 <li><a href="">Seni Budaya</a></li>
-                <li><a href="">Pendidikan Jasmani</a></li>
+                <li><a href="">P. Jasmani</a></li>
             </ul>
         </div>
         <div class="contentdua">
@@ -235,11 +390,11 @@
                 pelajaran,maupun diluar mata pelajaran.</p>
             <div class="isikiri">
                 <a href=""><img src="user.png" alt="user"></a>
-                <h4>Alur Belajar</h4>
+                <h4>Bimbingan Konseling</h4>
             </div>
             <div class="isikanan">
                 <a href=""><img src="female.png" alt="female"></a>
-                <h4>Progres belajar</h4>
+                <h4>Wali Kelas</h4>
             </div>
         </div>
         <div class="footer">
