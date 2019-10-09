@@ -1,39 +1,324 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
+
 <head>
-	<title>Login</title>
+    <title>Login</title>
+    <link rel="shortcut icon" href="ahitam.png">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            color: #fff;
+            font-family: Fira sans, sans-serif;
+        }
+
+        body {
+            width: 80%;
+            margin: 50px auto;
+            background-image: url("bgabout.png");
+            background-size: cover;
+        }
+
+        nav {
+            margin: auto;
+            text-align: center;
+            width: 100%;
+
+        }
+
+        nav img {
+            width: 30px;
+            height: 30px;
+            float: left;
+        }
+
+        nav ul {
+            padding: 0 20px;
+            list-style: none;
+            position: relative;
+            display: inline-block;
+            width: 100%;
+        }
+
+        nav ul li {
+            float: right;
+        }
+
+        nav .tombolmaning {
+            float: right;
+        }
+
+        nav .icon {
+            float: left;
+        }
+
+        nav .icon h4 {
+            float: left;
+            margin-top: 0px;
+            padding: 5px;
+        }
+
+        nav ul li #tombol_lain:hover {
+            border-bottom: 2px solid #37988e;
+        }
+
+        nav ul li .tombol:hover {
+            background-color: #37988e;
+            border-bottom: 2px solid #37988e;
+        }
+
+        /* nav ul li:hover a{
+        border-bottom: #37988e;
+    } */
+        nav ul li {
+            display: block;
+            padding: 10px 20px 10px 0;
+            color: #fff;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        #tombol_lain {
+            padding-bottom: 10px;
+        }
+
+        .tombol {
+            /* padding: 0; */
+            /* background-color: aliceblue; */
+            border-radius: 10px;
+            padding: 10px 20px;
+            /* color: #000; */
+            text-align: center;
+        }
+
+        .content {
+            margin: 150px auto 0 auto;
+            width: 70%;
+            text-align: center;
+        }
+
+        form label {
+            margin: 10px 0;
+            margin-bottom: 30px;
+        }
+
+        .form-group {
+            margin: 20px auto;
+            font-size: 12pt;
+            padding: 5px;
+            width: 330px;
+            height: 30px;
+            border: 2px solid black;
+            border-radius: 10px;
+            color: black;
+        }
+
+        .remember {
+            padding: 0;
+            font-size: 8pt;
+            margin: 20px 0;
+        }
+
+        button {
+            padding: 7px 35px;
+            background-color: #4ACEC9;
+            border-radius: 12px;
+        }
+
+
+        .footer {
+            width: 100%;
+            margin: 300px auto 0 auto;
+            text-align: center;
+        }
+
+        .socialmedia {
+            float: left;
+            margin: 0px 0 20px 0;
+            padding: 0px;
+        }
+
+        .socialmedia ul li {
+            display: inline-block;
+        }
+
+        .socialmedia img {
+            width: 30px;
+            height: 30px;
+        }
+
+        .meidapartner {
+            margin-top: 50px;
+            padding: 0px;
+            text-align: center;
+        }
+
+        .meidapartner img {
+            width: 50px;
+            height: 50px;
+        }
+
+        .contact {
+            float: right;
+            margin: 0px 0 20px 0;
+            padding: 0px;
+        }
+
+        @media screen and (max-width: 960px) {
+
+            
+
+            .content {
+                width: 100%;
+            }
+
+            .footer {
+                width: 100%;
+                margin: 250px auto 0 auto;
+                /* font-size: 12pt; */
+            }
+
+            .socialmedia {
+                float: none;
+                margin: 20px 0;
+            }
+
+            .socialmedia img {
+                margin: 20px 0;
+            }
+
+            .meidapartner  {
+                margin: 20px 0;
+            }
+            .meidapartner img{
+                margin: 20px;
+            }
+
+            .contact {
+                float: none;
+                margin: 0px 0 20px 0;
+                padding: 0px;
+            }
+            .contact p{
+                margin-top: 20px;
+            }
+
+
+        }
+
+        @media screen and (max-width: 720px) {
+            .header {
+                position: inherit;
+            }
+
+            nav img {
+                width: 30px;
+                height: 30px;
+                float: left;
+            }
+
+            nav ul {
+                padding: 0 20px;
+                list-style: none;
+                position: relative;
+                display: inline-block;
+                width: 100%;
+            }
+
+            nav ul li {
+                float: none;
+            }
+
+            nav .tombolmaning {
+                float: none;
+            }
+
+            nav .icon {
+                float: none;
+            }
+
+            nav .icon h4 {
+                float: none;
+                margin-top: 0px;
+                padding: 5px;
+            }
+            .footer {
+                width: 100%;
+            }
+
+            .form-group {
+                margin: 20px auto;
+                padding: 5px;
+                width: 280px;
+                height: 30px;
+                border: 2px solid black;
+                border-radius: 10px;
+                color: black;
+            }
+
+            /* .socialmedia img {
+                width: 20px;
+                height: 20px;
+            }
+
+            .meidapartner img {
+                width: 30px;
+                height: 30px;
+            } */
+        }
+    </style>
+
 </head>
+
 <body>
-	<header>
-		<h1 align="center">LOGIN</h1>
-		<hr>
-		<br>
-	</header>
-	<form>
-			<table align="center" cellpadding="14" cellspacing="1"  style="padding: 2px;">
-			<tr>
-				<table width="100" align="center" cellpadding="14" cellspacing="1">
-			<tr>
-				<td>Username</td>
-				<td>:</td>
-				<td><input type="text" name="Username" size="21" placeholder="Masukkan Username"></td>
-			</tr>
-			<tr>
-				<td>Password</td>
-				<td>:</td>
-				<td><input type="password" name="password" placeholder="Masukkan Password"></td>
-			</tr>
-			<tr>
-				<td></td>
-				<td></td>
-				<td><input type="submit" name="submit" value="LOGIN"></td>
-			</tr>
-		</table>
-			</td>
-		</tr>
-	</table>
-	</form>
-	<br>
-	<hr>
+    <div class="header">
+        <nav>
+            <ul>
+                <div class="icon">
+                    <li> <a href="#"><img src="a.png" alt="a">
+                            <h4>- Learning</h4>
+                        </a></li>
+                </div>
+                <div class="tombolmaning">
+                    <li><a href="#" class="tombol">Login</a></li>
+                    <li><a href="#" id="tombol_lain">About Us</a></li>
+                    <li><a href="#" id="tombol_lain">My Course</a></li>
+                    <li><a href="#" id="tombol_lain">Home</a></li>
+                </div>
+            </ul>
+        </nav>
+    </div>
+    <div class="content">
+        <form class="form">
+            <label for="username">Username</label><br>
+            <input type="text" id="username" class="form-group" placeholder="Username"><br>
+            <label for="password">Password</label><br>
+            <input type="password" id="password" class="form-group" placeholder="Password"><br>
+            <input type="checkbox" class="remember">Remember me <br>
+        </form>
+        <button type="submit">Login</button>
+    </div>
+    <div class="footer">
+        <div class="meidapartner">
+            <h5>Media Partner</h5>
+            <img src="diknas.png" alt="Kemdikbud">
+        </div>
+        <div class="socialmedia">
+            <h5>Social Media</h5>
+            <ul>
+                <li><img src="instagram.png" alt="instagram"></li>
+                <li><img src="facebook.png" alt="facebook"></li>
+                <li><img src="twitter.png" alt="twitter"></li>
+            </ul>
+        </div>
+        <div class="contact">
+            <h5>Contact Us</h5>
+            <p>www.SMAN1Jember.com</p>
+        </div>
+    </div>
+    </div>
 </body>
+
 </html>
