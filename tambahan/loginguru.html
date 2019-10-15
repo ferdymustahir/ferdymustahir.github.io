@@ -222,11 +222,11 @@
     <div class="content">
             <form class="form" action="#" method="POST" onSubmit="validasi()">
                     <label for="Nama">Nama</label><br>
-                    <input type="text" id="Nama" class="form-group" placeholder="Nama"><br>
+                    <input type="text" id="nama" class="form-group" placeholder="Nama"><br>
                     <label for="NIP">NIP</label><br>
                     <input type="number" id="NIP" class="form-group" placeholder="NIP"><br>
                     <laber for="Umur">Umur</laber><br/>
-                    <input type="number" id="Umur" class="form-group" placeholder="Umur"><br/>
+                    <input type="number" id="usia" class="form-group" placeholder="Umur"><br/>
                     <laber for="Domisili">Domisili</laber><br/>
                     <input type="text" id="Domisili" class="form-group" placeholder="Kota"><br/>
                     <laber for="Pelajaran yang Diampu">Pelajaran yang Diampu</laber><br/>
@@ -254,24 +254,17 @@
         </div>
     </div>
 
-    <script>
-        function myFunction() {
-            var x = document.getElementById("myTopnav");
-            if (x.className === "topnav") {
-                x.className += " responsive";
-            } else {
-                x.className = "topnav";
+    <script type="text/javascript">
+        function validasi() {
+            var nama = document.getElementById("nama").value;
+            var NIP = document.getElementById("NIP").value;
+            var usia = document.getElementById("usia").value;
+            if (nama != "" && NIP!="" && Usia !="") {
+                return true;
+            }else{
+                alert('Anda harus mengisi data dengan lengkap !');
             }
         }
-    //     function validasi() {
-	// 	var username = document.getElementById("username").value;
-	// 	var password = document.getElementById("password").value;
-	// 	if (username != "" && password!="") {
-	// 		return true;
-	// 	}else{
-	// 		alert('Anda harus mengisi data dengan lengkap !');
-	// 	}
-	// }
     </script>
 
 </body>
