@@ -265,14 +265,15 @@
     </div>
 
     <div class="content">
-            <form class="form" action="#" method="POST" onSubmit="validasi()">
+            <form class="form" action="" method="POST" onsubmit="validasi();">
                     <label for="username">Username</label><br>
                     <input type="text" id="username" class="form-group" placeholder="Username"><br>
                     <label for="password">Password</label><br>
                     <input type="password" id="password" class="form-group" placeholder="Password"><br>
                     <input type="checkbox" class="remember">Remember me <br>
+                    
                 </form>
-                <button type="submit">Login</button>
+                <button type="submit" onclick="document.getElementsByClassName('form')[0].submit(validasi())">Login</button>  
         </div>
     </div>
     <div class="footer">
@@ -295,6 +296,11 @@
     </div>
 
     <script type="text/javascript">
+        // var validasi = (function (){
+        //     event.preventDefault();
+        //     alert('test');
+        // });
+
         function myFunction() {
             var x = document.getElementById("myTopnav");
             if (x.className === "topnav") {
@@ -303,23 +309,23 @@
                 x.className = "topnav";
             }
         }
+        function validasi() {
+		var username = document.getElementById("username").value;
+		var password = document.getElementById("password").value;
+        console.log(username);
 
-        // function validasi() {
-		// var username = document.getElementById("username").value;
-		// var password = document.getElementById("password").value;
-        // console.log(username);
-
-		// if (username == "" && password =="") {
-        //     alert("Data Kosong");
-		// 	return false;
-		// }else if(username !="" && password !=""){
-		// 	alert("Yeayy Masuk");
-		// }
-        // else{
-        //     alert("Data Kosong");
-        //     return false;
-        // }
-	// }
+		if (username == "" && password =="") {
+            alert("Data Kosong");
+			return false;
+		}else if(username !="" && password !=""){
+			alert("Yeayy Masuk");
+            window.location.href="Home.html";
+		}
+        else{
+            alert("Data Kosong");
+            return false;
+        }
+	 }
     </script>
 
 </body>

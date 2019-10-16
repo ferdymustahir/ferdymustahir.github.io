@@ -309,22 +309,26 @@
             }
         }
 
-        // function validasi() {
-		// var username = document.getElementById("username").value;
-		// var password = document.getElementById("password").value;
-        // console.log(username);
+        function validasi() {
+		var nama = document.getElementById("nama").value;
+		var NIP = document.getElementById("NIP").value;
+        var usia = document.getElementById("usia").value;
+        var Domisili = document.getElementById("Domisili").value;
 
-		// if (username == "" && password =="") {
-        //     alert("Data Kosong");
-		// 	return false;
-		// }else if(username !="" && password !=""){
-		// 	alert("Yeayy Masuk");
-		// }
-        // else{
-        //     alert("Data Kosong");
-        //     return false;
-        // }
-	// }
+        console.log(nama);
+
+		if (nama == "" && NIP =="" && usia == "" && Domisili == "") {
+            alert("Data Kosong");
+			return false;
+		}else if(nama != "" && NIP !="" && usia != "" && Domisili != ""){
+			alert("Yeayy Masuk");
+            window.location.href="dataguru.html";
+		}
+        else{
+            alert("Data Kosong");
+            return false;
+        }
+	}
     </script>
 
 </body>
