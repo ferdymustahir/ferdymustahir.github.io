@@ -265,7 +265,7 @@
     </div>
 
     <div class="content">
-            <form class="form" action="" method="POST" onsubmit="validasi();">
+            <form class="form" action="#" method="POST" onsubmit="validasi();">
                     <label for="username">Username</label><br>
                     <input type="text" id="username" class="form-group" placeholder="Username"><br>
                     <label for="password">Password</label><br>
@@ -319,7 +319,7 @@
 			return false;
 		}else if(username !="" && password !=""){
 			alert("Yeayy Masuk");
-            window.location.href="Home.html";
+            setTimeout("location.href='Home.html'", 10);
 		}
         else{
             alert("Data Kosong");

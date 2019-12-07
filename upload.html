@@ -240,10 +240,28 @@
 
     <div class="content">
         <h2>Upload Tugas anda Dibawah ini</h2>
-        <form action="">
-            <input type="file" value="Upload Disini">
+        <form id="frm" enctype="multipart/form-data" method="post">
+            File <input id="file_input" type="file" name="file_input"> <input type="submit" value="Upload">
         </form>
-        <button type="submit">Upload</button>
+        
+        <div id="pesan" style="display: none">Silakan tunggu...</div>
+        <div id="result">
+            <table>
+                <tr>
+                    <td>Nama file</td>
+                    <td id="filename"></td>
+                </tr>
+                <tr>
+                    <td>Ukuran</td>
+                    <td id="size"></td>
+                </tr>
+                <tr>
+                    <td>Type</td>
+                    <td id="type">Type</td>
+                </tr>
+            </table>
+        </div>
+
     </div>
     <div class="footer">
         <div class="meidapartner">
@@ -264,7 +282,34 @@
         </div>
     </div>
 
-    <script>
+    <script type="text/javascript">
+        $(function(){
+            $("#frm").submit(function(){
+                $("#pesan").ajaxStart(function(){
+                    $(this).show();
+                }).ajaxComplete(function(){
+                    $(this).hide();
+                });
+                $.ajaxFileUpload({
+                    url: "upload.php",
+                    secureuri: false,
+                    fileElementId: "file_input",
+                    dataType: "json",
+                    success: function (json, status){
+                        if(json.status==1){
+                            $('td#filename').html(json.filename);
+                            $('td#size').html(json.size);
+                            $('td#type').html(json.type);
+                        }else{
+                            alert('Upload GAGAL!');
+                        }
+                    }
+                });
+                return false;
+            });
+        });
+
+        
         function myFunction() {
             var x = document.getElementById("myTopnav");
             if (x.className === "topnav") {
