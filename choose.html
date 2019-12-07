@@ -1,0 +1,44 @@
+<a href="http://lesson8.blogspot.com/">http://lesson8.blogspot.com/</a>
+
+<form id="form1" runat="server">
+    <input type='file' id="inputFile" />
+    <img id="image_upload_preview" src="http://placehold.it/100x100" alt="your image" />
+</form>
+<script type="text/javascript">
+        
+        function validasi() {
+		var nama = document.getElementById("nama").value;
+		var NIP = document.getElementById("NIP").value;
+        var usia = document.getElementById("usia").value;
+        var Domisili = document.getElementById("Domisili").value;
+
+        console.log(nama);
+
+		if (nama == "" && NIP =="" && usia == "" && Domisili == "") {
+            alert("Data Kosong");
+			return false;
+		}else if(nama != "" && NIP !="" && usia != "" && Domisili != ""){
+			alert("Yeayy Masuk");
+            window.location.href="dataguru.html";
+		}
+        else{
+            alert("Data Kosong");
+            return false;
+        }
+	}
+     function readURL(input) {
+        if (input.files && input.files[0]) {
+            var reader = new FileReader();
+
+            reader.onload = function (e) {
+                $('#image_upload_preview').attr('src', e.target.result);
+            }
+
+            reader.readAsDataURL(input.files[0]);
+        }
+    }
+
+    $("#inputFile").change(function () {
+        readURL(this);
+    });
+    </script>
