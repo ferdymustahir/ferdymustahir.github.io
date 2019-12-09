@@ -76,9 +76,13 @@
 
 		if (username == "" && password =="") {
             alert("Data Kosong");
-			return false;
-		}else if(username !="" && password !=""){
-			alert("Yeayy Masuk");
+			setTimeout("location.href='Login.html'", 10);
+		}else if(username =="admin" && password =="admin"){
+			alert("Selamat Datang Admin");
+            setTimeout("location.href='Homeadmin.html'", 10);
+		}
+        else if(username !="" && password !=""){
+			alert("Selamat Datang");
             setTimeout("location.href='Home.html'", 10);
 		}
         else{

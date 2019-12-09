@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Guru</title>
+    <link rel="shortcut icon" href="img/ahitam.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="formguru.css" type="text/css">
+</head>
+
+<body>
+
+    <div class="topnav" id="myTopnav">
+        <a href="Home.html" class="a"><img src="img/a.png" alt="a">-Learning
+        </a>
+        <a href="#modal-one" class="as">Logout</a>
+        
+        <a href="courseadmin.html" class="active">MyCourse</a>
+        <a href="Homeadmin.html" class="active">Home</a>
+        <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+            <i class="fa fa-bars"></i>
+        </a>
+    </div>
+    <!-- Modal -->
+    <div class="modal" id="modal-one" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-header">
+            <h2>E-Learning</h2>
+            <!-- <a href="#" class="btn-close" aria-hidden="true">x</a> -->
+          </div>
+          <div class="modal-body">
+            <p>Apa Anda Yakin ingin Keluar?</p>
+          </div>
+          <div class="modal-footer">
+            <a href="Login.html" class="btn">Ya</a>
+            <a href="formmapel.html" class="btn">Tidak</a>
+          </div>
+        </div>
+      </div>
+
+    <div class="content">
+            <form class="form" action="#" method="POST" onsubmit="validasi();">
+            <label for="Nama">Kode</label><br>
+            <input type="text" id="nama" class="form-group" placeholder="Kode Mata Pelajaran"><br>
+            <label for="NIP">Mata Pelajaran</label><br>
+            <input type="text" id="NIP" class="form-group" placeholder="Mata Pelajaran"><br>
+        </form>
+        <button type="submit" onclick="document.getElementsByClassName('form')[0].submit(validasi())">Input</button>
+        </div>
+    </div>
+    <div class="footer">
+        <div class="meidapartner">
+            <h5>Media Partner</h5>
+            <img src="img/diknas.png" alt="Kemdikbud">
+        </div>
+        <div class="socialmedia">
+            <h5>Social Media</h5>
+            <ul>
+                <li><img src="img/instagram.png" alt="instagram"></li>
+                <li><img src="img/facebook.png" alt="facebook"></li>
+                <li><img src="img/twitter.png" alt="twitter"></li>
+            </ul>
+        </div>
+        <div class="contact">
+            <h5>Contact Us</h5>
+            <p>www.SMAN1Jember.com</p>
+        </div>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script type="text/javascript">
+        function myFunction() {
+            var x = document.getElementById("myTopnav");
+            if (x.className === "topnav") {
+                x.className += " responsive";
+            } else {
+                x.className = "topnav";
+            }
+        }
+
+        function validasi() {
+		var nama = document.getElementById("nama").value;
+		var NIP = document.getElementById("NIP").value;
+        console.log(nama);
+
+		if (nama == "" && NIP =="" ) {
+            alert("Data Kosong");
+			return false;
+		}else if(nama != "" && NIP !="" ){
+			alert("Data Berhasil ditambahkan");
+            setTimeout("location.href='courseadmin.html'", 10);
+		}
+        else{
+            alert("Data Kosong");
+            return false;
+        }
+	}
+    // function readURL(input) {
+    //     if (input.files && input.files[0]) {
+    //         var reader = new FileReader();
+
+    //         reader.onload = function (e) {
+    //             $('#image_upload_preview').attr('src', e.target.result);
+    //         }
+
+    //         reader.readAsDataURL(input.files[0]);
+    //     }
+    // }
+
+    // $("#inputFile").change(function () {
+    //     readURL(this);
+    // });
+    </script>
+
+</body>
+
+</html>
