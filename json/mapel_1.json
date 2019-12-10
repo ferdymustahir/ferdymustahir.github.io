@@ -1,14 +1,5 @@
 [
     {
-        "konten":"Sosiologi"
-    },
-    {
-        "konten":"Sejarah"
-    },
-    {
-        "konten":"Geografi"
-    },
-    {
-        "konten":"Ekonomi"
+        "konten":"Sosiologi,Geografi"
     }
 ]
