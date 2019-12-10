@@ -43,8 +43,9 @@
 
 
     <div class="content">
-        <div class="isisatu">
+        <div class="isisatu" id="list_data" page="">
                 <a href="formmapel.html"> <img src="img/add.png" alt=""> Tambah Mata Pelajaran</a>
+                <br><br><br><h4>Jurusan IPA</h4>
                 <ul>
                     <li><a href="cbahasaadmin.html">Bahasa Indoneisa</a></li>
                     <li><a href="cinggris.html">Bahasa Inggris</a></li>
@@ -61,6 +62,7 @@
                     <li><a href="courseseni.html">Seni Budaya</a></li>
                     <li><a href="coursepenjas.html">Penjaskes</a></li>
                 </ul>
+                <button id="more_btn" style="background-color: darkgreen; border-radius: 3px; padding: 5px;">Lebih Banyak</button>
         </div>
         <div class="contentdua">
             
@@ -89,6 +91,57 @@
         </div>
     </div>
 
+    <script src="js/jquery-3.4.1.min.js"></script>
+    <script>
+        $("#more_btn").click(function () {
+            var halaman = $("#list_data").attr("page");
+            
+            if (halaman == "" || halaman == NaN) {
+                console.log("hai");
+                halaman = 1;
+            }
+            else {
+                halaman = Number(halaman);
+                halaman+=1;
+            }
+
+            console.log("hal "+halaman);
+
+
+            $("#list_data").attr("page", halaman);
+            if(halaman == 1){
+                $("#more_btn").hide();
+            }
+
+            var url = "json/mapel_"+halaman+".json"
+
+            $.ajax({
+                url: url,
+                type: 'GET',
+                dataType: 'json'
+            })
+            .done(function (mapel) {
+                console.log("sukses");
+                var data = "";
+                $.each(mapel, function (index, val) {
+                    data += `
+                    <ul>
+                        <li><a href="cbahasaadmin.html">`+val.konten+`</a></li>
+                        <li><a href="cinggris.html">`+val.konten+`</a></li>
+                        <li><a href="coursefisika.html">`+val.konten+`</a></li>
+                        <li><a href="coursebio.html">`+val.konten+`</a></li>
+                    </ul>
+                    `;  
+                });
+
+                $("#list_data").append(data);
+            })
+            .fail(function () {
+                console.log("error");
+            })
+
+        });
+    </script>
     <script>
         function myFunction() {
             var x = document.getElementById("myTopnav");
