@@ -1,7 +1,9 @@
 [
     {
         "konten":"Sosiologi",
-        "kontent":"Ekonomi"
+        "konten1":"Ekonomi",
+        "konten2":"Sejarah",
+        "konten3":"Geografi"
     }
     
 ]
