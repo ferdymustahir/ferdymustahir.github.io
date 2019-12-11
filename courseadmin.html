@@ -7,7 +7,7 @@
     <link rel="shortcut icon" href="img/ahitam.png">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="course.css" type="text/css">
-       
+
 </head>
 
 <body>
@@ -16,7 +16,7 @@
         <a href="Home.html" class="a"><img src="img/a.png" alt="a">-Learning
         </a>
         <a href="#modal-one" class="as">Logout</a>
-        
+
         <a href="courseadmin.html" class="active">My Course</a>
         <a href="Homeadmin.html" class="active">Home</a>
         <a href="javascript:void(0);" class="icon" onclick="myFunction()">
@@ -25,51 +25,50 @@
     </div>
     <!-- Modal -->
     <div class="modal" id="modal-one" aria-hidden="true">
-            <div class="modal-dialog">
-              <div class="modal-header">
+        <div class="modal-dialog">
+            <div class="modal-header">
                 <h2>E-Learning</h2>
                 <!-- <a href="#" class="btn-close" aria-hidden="true">x</a> -->
-              </div>
-              <div class="modal-body">
+            </div>
+            <div class="modal-body">
                 <p>Apa Anda Yakin ingin Keluar?</p>
-              </div>
-              <div class="modal-footer">
+            </div>
+            <div class="modal-footer">
                 <a href="Login.html" class="btn">Ya</a>
                 <a href="courseadmin.html" class="btn">Tidak</a>
-              </div>
             </div>
-          </div>
+        </div>
+    </div>
 
 
 
     <div class="content">
         <div class="isisatu" id="list_data" page="">
-                <a href="formmapel.html"> <img src="img/add.png" alt=""> Tambah Mata Pelajaran</a>
-                <br><br><br><h4>Jurusan IPA</h4>
-                <ul>
-                    <li><a href="cbahasaadmin.html">Bahasa Indoneisa</a></li>
-                    <li><a href="cinggris.html">Bahasa Inggris</a></li>
-                    <li><a href="coursefisika.html">Fisika</a></li>
-                    <li><a href="coursebio.html">Biologi</a></li>
-                </ul>
-                <ul>
-                    <li><a href="coursekim.html">Kimia</a></li>
-                    <li><a href="courseagm.html">P. Agama</a></li>
-                    <li><a href="coursekwn.html">Kewarganegaraan</a></li>
-                    <li><a href="coursemat.html">Matematika</a></li>
-                </ul>
-                <ul>
-                    <li><a href="courseseni.html">Seni Budaya</a></li>
-                    <li><a href="coursepenjas.html">Penjaskes</a></li>
-                </ul>
-                <button id="more_btn" style="background-color: darkgreen; border-radius: 3px; padding: 5px;">Lebih Banyak</button>
+            <a href="formmapel.html"> <img src="img/add.png" alt=""> Tambah Mata Pelajaran</a>
+            <br><br><br>
+            <h4>Jurusan IPA</h4>
+            <ul>
+                <li><a href="cbahasaadmin.html">Bahasa Indoneisa</a></li>
+                <li><a href="cinggris.html">Bahasa Inggris</a></li>
+                <li><a href="coursefisika.html">Fisika</a></li>
+                <li><a href="coursebio.html">Biologi</a></li>
+            </ul>
+            <ul>
+                <li><a href="coursekim.html">Kimia</a></li>
+                <li><a href="courseagm.html">P. Agama</a></li>
+                <li><a href="coursekwn.html">Kewarganegaraan</a></li>
+                <li><a href="coursemat.html">Matematika</a></li>
+            </ul>
+
+            <button id="more_btn" style="background-color: darkgreen; border-radius: 3px; padding: 5px;">Lebih
+                Banyak</button>
         </div>
         <div class="contentdua">
-            
-           
-                <!-- <a href="dataguruadmin.html"><img src="img/female.png" alt="female"></a>
+
+
+            <!-- <a href="dataguruadmin.html"><img src="img/female.png" alt="female"></a>
                 <h4>Data Guru</h4> -->
-            
+
         </div>
     </div>
     <div class="footer">
@@ -95,21 +94,21 @@
     <script>
         $("#more_btn").click(function () {
             var halaman = $("#list_data").attr("page");
-            
+
             if (halaman == "" || halaman == NaN) {
                 console.log("hai");
                 halaman = 1;
             }
             else {
                 halaman = Number(halaman);
-                halaman+=1;
+                halaman += 1;
             }
 
-            console.log("hal "+halaman);
+            console.log("hal " + halaman);
 
 
             $("#list_data").attr("page", halaman);
-            if(halaman == 1){
+            if (halaman == 1) {
                 $("#more_btn").hide();
             }
 
@@ -120,27 +119,31 @@
                 type: 'GET',
                 dataType: 'json'
             })
-            .done(function (mapel) {
-                console.log("sukses");
-                var data = "";
-                $.each(mapel, function (index, val) {
-                    data += `
+                .done(function (mapel) {
+                    console.log("sukses");
+                    var data = "";
+                    $.each(mapel, function (index, val) {
+                        data += `
                     <div class="isisatu">
                         <ul>
-                            <li><a href="cbahasaadmin.html">`+val.konten+`</a></li>
-                            <li><a href="cbahasaadmin.html">`+val.konten1+`</a></li>
-                            <li><a href="cbahasaadmin.html">`+val.konten2+`</a></li>
-                            <li><a href="cbahasaadmin.html">`+val.konten3+`</a></li>
+                            <li><a href="cbahasaadmin.html">`+ val.konten + `</a></li>
+                            <li><a href="cbahasaadmin.html">`+ val.konten1 + `</a></li>
+                            <li><a href="cbahasaadmin.html">`+ val.konten2 + `</a></li>
+                            <li><a href="cbahasaadmin.html">`+ val.konten3 + `</a></li>
+                        </ul>
+                        <ul>
+                            <li><a href="courseseni.html">`+ val.konten4 +`</a></li>
+                            <li><a href="coursepenjas.html">`+ val.konten5 +`</a></li>
                         </ul>
                         </div>
-                    `;  
-                });
+                    `;
+                    });
 
-                $("#list_data").append(data);
-            })
-            .fail(function () {
-                console.log("error");
-            })
+                    $("#list_data").append(data);
+                })
+                .fail(function () {
+                    console.log("error");
+                })
 
         });
     </script>
